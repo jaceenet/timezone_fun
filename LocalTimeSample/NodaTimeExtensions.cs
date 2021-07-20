@@ -18,7 +18,7 @@ namespace LocalTimeSample
                 try
                 {
                     localDateTime = LocalDateTime.FromDateTime(nextLocal);
-                    nextUtc = zone.AtStrictly(localDateTime).ToDateTimeUtc();
+                    nextUtc = zone.AtLeniently(localDateTime).ToDateTimeUtc();
                     localNext = localDateTime;
 
                     return true;
